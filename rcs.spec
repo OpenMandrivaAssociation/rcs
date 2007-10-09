@@ -3,7 +3,7 @@
 %define release	%mkrel 9
 
 Name:		%{name}
-Summary:	Revision Control System (RCS) file version management tools.
+Summary:	Revision Control System (RCS) file version management tools
 Version:	%{version}
 Release:	%{release}
 License:	GPL
