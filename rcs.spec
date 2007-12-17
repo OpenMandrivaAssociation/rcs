@@ -13,7 +13,6 @@ Patch0:		rcs-5.7-stupidrcs.patch
 Patch1:		rcs-5.7-security.patch
 Url:		http://www.cs.purdue.edu/homes/trinkle/RCS/
 BuildRequires:	autoconf2.1
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The Revision Control System (RCS) is a system for managing multiple
