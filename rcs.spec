@@ -4,7 +4,7 @@
 Name:		%{name}
 Summary:	Revision Control System (RCS) file version management tools
 Version:	%{version}
-Release:	%mkrel 11
+Release:	%mkrel 12
 License:	GPL
 Group:		Development/Other
 Source0:	ftp://ftp.gnu.org/pub/gnu/rcs-5.7.tar.bz2
@@ -26,7 +26,7 @@ different versions of files.
 
 %prep
 %setup -q
-%patch -p1 -b .stupidrcs
+%patch0 -p1 -b .stupidrcs
 %patch1 -p1 -b .security
 
 %build
