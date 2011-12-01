@@ -37,12 +37,12 @@ touch src/conf.h
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
-%makeinstall man1dir=$RPM_BUILD_ROOT%{_mandir}/man1 man5dir=$RPM_BUILD_ROOT%{_mandir}/man5
+%makeinstall man1dir=%{buildroot}%{_mandir}/man1 man5dir=%{buildroot}%{_mandir}/man5
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
