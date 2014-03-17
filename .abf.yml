@@ -1,2 +1,4 @@
+removed_sources:
+  rcs-5.7.tar.bz2: edf999c46bd7b021398f7a2b8c8d765aa4d5c59c
 sources:
-  "rcs-5.7.tar.bz2": edf999c46bd7b021398f7a2b8c8d765aa4d5c59c
+  rcs-5.9.2.tar.xz: cb053f6ba87ab6ea03306d6241e1cde67182100b

@@ -1,18 +1,15 @@
-%define name	rcs
-%define version	5.7
 
-Name:		%{name}
+Name:		rcs
 Summary:	Revision Control System (RCS) file version management tools
-Version:	%{version}
-Release:	22
+Version:	5.9.2
+Release:	1
 License:	GPL
 Group:		Development/Other
-Source0:	ftp://ftp.gnu.org/pub/gnu/rcs-5.7.tar.bz2
+Source0:	ftp://ftp.gnu.org:21/pub/gnu/rcs/%{name}-%{version}.tar.xz
 Patch0:		rcs-5.7-stupidrcs.patch
 Patch1:		rcs-5.7-security.patch
 Url:		http://www.cs.purdue.edu/homes/trinkle/RCS/
 BuildRequires:	autoconf2.1
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The Revision Control System (RCS) is a system for managing multiple
@@ -37,15 +34,12 @@ touch src/conf.h
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 
-%makeinstall man1dir=$RPM_BUILD_ROOT%{_mandir}/man1 man5dir=$RPM_BUILD_ROOT%{_mandir}/man5
+%makeinstall man1dir=%{buildroot}%{_mandir}/man1 man5dir=%{buildroot}%{_mandir}/man5
 
 %clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
 %doc NEWS REFS
 %{_bindir}/*
 %{_mandir}/man1/*
@@ -106,4 +100,5 @@ Import rcs
 - fix buildrequires
 - added url
 - cosmetics
+
 
