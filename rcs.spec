@@ -8,6 +8,7 @@ Url:		http://www.cs.purdue.edu/homes/trinkle/RCS/
 Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.xz
 Patch0:		rcs-5.7-stupidrcs.patch
 #Patch1:		rcs-5.7-security.patch
+BuildRequires:	ed
 BuildRequires:	groff
 
 %description
