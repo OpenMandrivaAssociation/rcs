@@ -1,15 +1,16 @@
-Summary:	Revision Control System (RCS) file version management tools
+
 Name:		rcs
+Summary:	Revision Control System (RCS) file version management tools
+
+
 Version:	5.9.2
 Release:	1
-License:	GPLv2
+License:	GPL
 Group:		Development/Other
+Source0:	ftp://ftp.gnu.org:21/pub/gnu/rcs/%{name}-%{version}.tar.xz
+Patch0:		rcs-5.8-build-tweaks.patch
 Url:		http://www.cs.purdue.edu/homes/trinkle/RCS/
-Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.xz
-Patch0:		rcs-5.7-stupidrcs.patch
-#Patch1:		rcs-5.7-security.patch
-BuildRequires:	ed
-BuildRequires:	groff
+BuildRequires:	autoconf
 
 %description
 The Revision Control System (RCS) is a system for managing multiple
@@ -23,22 +24,26 @@ different versions of files.
 
 %prep
 %setup -q
-%apply_patches
-autoreconf -fi
+%patch0 -p1 -b .build-tweaks
 
 %build
-%configure2_5x --with-diffutils
-
-touch src/conf.h
+autoconf
+%configure --with-diffutils
 %make
 
 %install
-%makeinstall man1dir=%{buildroot}%{_mandir}/man1 man5dir=%{buildroot}%{_mandir}/man5
+%makeinstall_std
+
+install -m 755 src/rcsfreeze %{buildroot}%{_bindir}
+
+rm -f %{buildroot}/%{_infodir}/dir
+
+%clean
 
 %files
 %doc NEWS
 %{_bindir}/*
-%{_infodir}/%{name}.info*
-%{_mandir}/man1/*
-%{_mandir}/man5/*
+%{_mandir}/man?/*
+%{_infodir}/*
+
 
