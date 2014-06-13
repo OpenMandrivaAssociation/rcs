@@ -4,7 +4,7 @@ Summary:	Revision Control System (RCS) file version management tools
 
 
 Version:	5.9.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Other
 Source0:	ftp://ftp.gnu.org:21/pub/gnu/rcs/%{name}-%{version}.tar.xz
