@@ -1,16 +1,15 @@
-
 Name:		rcs
 Summary:	Revision Control System (RCS) file version management tools
-
-
 Version:	5.9.2
-Release:	3
+Release:	2
 License:	GPL
 Group:		Development/Other
 Source0:	ftp://ftp.gnu.org:21/pub/gnu/rcs/%{name}-%{version}.tar.xz
 Patch0:		rcs-5.8-build-tweaks.patch
 Url:		http://www.cs.purdue.edu/homes/trinkle/RCS/
 BuildRequires:	autoconf
+BuildRequires:	ed
+BuildRequires:	groff
 
 %description
 The Revision Control System (RCS) is a system for managing multiple
@@ -27,9 +26,9 @@ different versions of files.
 %patch0 -p1 -b .build-tweaks
 
 %build
-autoconf
+autoreconf -fi
 %configure --with-diffutils
-%make
+make
 
 %install
 %makeinstall_std
