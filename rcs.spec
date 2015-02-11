@@ -26,6 +26,7 @@ different versions of files.
 %patch0 -p1 -b .build-tweaks
 
 %build
+export CC=gcc
 autoreconf -fi
 %configure --with-diffutils
 make
