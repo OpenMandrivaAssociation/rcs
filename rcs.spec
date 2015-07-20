@@ -6,6 +6,7 @@ License:	GPL
 Group:		Development/Other
 Source0:	ftp://ftp.gnu.org:21/pub/gnu/rcs/%{name}-%{version}.tar.xz
 Patch0:		rcs-5.8-build-tweaks.patch
+Patch1:		rcs-5.9.4-clang.patch
 Url:		http://www.cs.purdue.edu/homes/trinkle/RCS/
 BuildRequires:	autoconf
 BuildRequires:	ed
@@ -23,10 +24,10 @@ different versions of files.
 
 %prep
 %setup -q
-%patch0 -p1 -b .build-tweaks
+%apply_patches
 
 %build
-export CC=gcc
+#export CC=gcc
 autoreconf -fi
 %configure --with-diffutils
 make
