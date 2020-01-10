@@ -24,7 +24,7 @@ different versions of files.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 #export CC=gcc
