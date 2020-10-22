@@ -1,12 +1,12 @@
 Name:		rcs
 Summary:	Revision Control System (RCS) file version management tools
-Version:	5.9.4
-Release:	4
+Version:	5.10.0
+Release:	1
 License:	GPL
 Group:		Development/Other
 Source0:	ftp://ftp.gnu.org:21/pub/gnu/rcs/%{name}-%{version}.tar.xz
 Patch0:		rcs-5.8-build-tweaks.patch
-Patch1:		rcs-5.9.4-clang.patch
+Patch1:		rcs-5.10.0-formatstring.patch
 Url:		http://www.cs.purdue.edu/homes/trinkle/RCS/
 BuildRequires:	autoconf
 BuildRequires:	ed
@@ -30,10 +30,10 @@ different versions of files.
 #export CC=gcc
 autoreconf -fi
 %configure --with-diffutils
-make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 install -m 755 src/rcsfreeze %{buildroot}%{_bindir}
 

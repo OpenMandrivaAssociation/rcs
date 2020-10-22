@@ -1,0 +1,12 @@
+diff -up rcs-5.10.0/src/b-excwho.c.omv~ rcs-5.10.0/src/b-excwho.c
+--- rcs-5.10.0/src/b-excwho.c.omv~	2020-10-22 20:28:02.036377596 +0200
++++ rcs-5.10.0/src/b-excwho.c	2020-10-22 20:28:08.360403810 +0200
+@@ -123,7 +123,7 @@ set_uid_to (uid_t u)
+       if (BE (already_setuid))
+         return;
+       BE (already_setuid) = true;
+-      PFATAL ("root setuid not supported" + (u ? 5 : 0));
++      PFATAL ("%s", "root setuid not supported" + (u ? 5 : 0));
+     }
+ }
+ #endif  /* defined HAVE_SETUID */
