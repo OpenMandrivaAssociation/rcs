@@ -8,6 +8,10 @@ Source0:	ftp://ftp.gnu.org:21/pub/gnu/rcs/%{name}-%{version}.tar.xz
 Patch0:		rcs-5.8-build-tweaks.patch
 Patch1:		rcs-5.10.0-formatstring.patch
 Url:		https://www.cs.purdue.edu/homes/trinkle/RCS/
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	autoconf
 BuildRequires:	ed
 BuildRequires:	groff
